@@ -21,10 +21,13 @@
 
   <main>
     <div id="left-column">
-      <div id="category" class="facet"></div>
-      <div id="brand" class="facet"></div>
-      <div id="price" class="facet"></div>
       <div id="type" class="facet"></div>
+      <div id="locality" class="facet"></div>
+      <div id="skills" class="facet"></div>
+      <div id="industry" class="facet"></div>
+      <div id="current_company" class="facet"></div>
+      <div id="price" class="facet"></div>
+      <div id="yoos" class="facet"></div>
     </div>
 
     <div id="right-column">
@@ -45,12 +48,12 @@
   <script type="text/html" id="hit-template">
     <div class="hit">
       <div class="hit-image">
-        <img src="{{image}}" alt="{{name}}">
+        <img src="{{ profile_picture }}" alt="{{ profile_picture }}">
       </div>
       <div class="hit-content">
-        <h3 class="hit-price">${{price}}</h3>
-        <h2 class="hit-name">{{{_highlightResult.name.value}}}</h2>
-        <p class="hit-description">{{{_highlightResult.description.value}}}</p>
+        <h3 class="hit-price">{{ engineerrank_percentile }}</h3>
+        <h2 class="hit-name">{{{ name}}}</h2>
+        <p class="hit-description"><div>{{classification}}<br />>{{ schools }}</div><div>{{ companies }}</div><div>{{{ _highlightResult.description.value }}}</div></p>
       </div>
     </div>
   </script>
@@ -64,6 +67,10 @@
   <!-- /TEMPLATES -->
 
   <!-- SCRIPTS -->
+  <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+  <script src="//cdn.jsdelivr.net/autocomplete.js/0/autocomplete.js"></script>
+  <script src="//cdn.jsdelivr.net/algoliasearch.helper/2/algoliasearch.helper.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/instantsearch.js/1/instantsearch.min.js"></script>
   <script src="app.js"></script>
   <!-- /SCRIPTS -->
